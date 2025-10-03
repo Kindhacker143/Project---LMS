@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Management System</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa; /* Light background for contrast */
+            color: rgb(0, 0, 0);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2 {
+            color: #800000; /* Maroon color */
+            text-align: center;
+            font-size: 3rem;
+            margin: 20px 0;
+            animation: fadeIn 1s; /* Fade in animation */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .logo {
+            display: block;
+            margin: 20px auto; /* Added margin for spacing */
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #800000; /* Maroon color */
+            animation: rotateLogo 10s infinite linear;
+        }
+
+        @keyframes rotateLogo {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px;
+        }
+
+        /* Navbar styles */
+        nav {
+            background: linear-gradient(90deg, #800000, #b30000); /* Gradient background */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 100; /* Ensure navbar is above other elements */
+            height: 70px;
+        }
+
+        nav .navbar-brand {
+            font-size: 1.8rem; /* Increased size for the brand */
+            color: #fff; /* White text color */
+            font-weight: bold; /* Bolder text */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+
+        nav .navbar-brand:hover {
+            color: #ffcc00; /* Change brand color on hover */
+        }
+
+        nav a {
+            color: #f2f2f2; /* Light color for contrast */
+            text-align: center;
+            padding: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 5px; /* Rounded corners for links */
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+            color: #ffcc00; /* Gold color for text on hover */
+        }
+
+        /* Card grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            animation: slideIn 0.5s; /* Slide in animation for the card grid */
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .card {
+            background-color: #fff; /* White background for cards */
+            color: #800000; /* Maroon text */
+            border: 2px solid #800000; /* Maroon border */
+            border-radius: 10px;
+            padding: 40px; /* Adjust padding for better visual */
+            transition: all 0.3s ease-in-out; /* Smooth transition effects */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* For hover effect */
+            overflow: hidden; /* Prevent text from overflowing */
+            backdrop-filter: blur(5px); /* Add slight blur effect for modern look */
+            text-decoration: none; /* Remove underline from the card link */
+        }
+
+        .card:hover {
+            background-color: #800000; /* Maroon background on hover */
+            color: #ffffff; /* White text on hover */
+            transform: translateY(-5px); /* Lift effect */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px; /* Space between heading and paragraph */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+
+        .card p {
+            font-size: 1rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .card-grid {
+                grid-template-columns: 1fr; /* Stack cards on smaller screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Refresh</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <img src="image/logo.png" alt="Logo" class="logo"> <!-- Use an actual logo image path -->
+        <!-- Cards section -->
+        <br><br>
+        <div class="card-grid">
+            <a href="add_courses.php" class="card">
+                <h3>Add New </h3>
+                <p>Add New Student Application.</p>
+            </a>
+            <a href="view_courses.php" class="card">
+                <h3>View Table</h3>
+                <p>Organize and manage faculty and student Application.</p>
+            </a>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
